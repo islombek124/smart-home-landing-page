@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <!-- Tailwindcss link -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome link -->
+  <script src="https://kit.fontawesome.com/838257bc74.js" crossorigin="anonymous"></script>
+  <!-- CSS links -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bgBlue: "#1E5AF9",
+            darkBlue: "#000F38",
+            borderC: "#DDE0E5",
+            darkGray: "#313131",
+          },
+          boxShadow: {
+            "3xl": "0 0 0 150px #DDE0E5",
+          },
+          fontFamily: {
+            roboto: ["Roboto", "sans-serif"],
+          },
+          screens: {
+            mb: "500px",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body
+  class="scroll-smooth overflow-x-hidden font-roboto relative md:after:content-[''] md:after:absolute md:after:top-0 md:after:right-0 md:after:w-[150px] md:after:h-[150px] md:after:rounded-full md:after:opacity-20 md:after:translate-x-2/4 md:after:-translate-y-2/4 md:after:shadow-3xl md:after:z-[1]">
+  <div class="pattern h-screen w-full flex justify-between absolute left-2/4 -translate-x-2/4 max-w-[66%]">
+    <span
+      class="h-full w-[1px] md:block hidden relative before:content-[''] before:absolute before:w-[30px] before:h-[30px] before:rounded-full before:top-2/4 before:-translate-x-2/4 before:-translate-y-2/4 before:bg-bgBlue before:shadow-[0_0_0_5px_white]"></span>
+    <span class="h-full w-[1px] md:block hidden relative"></span>
+    <span class="h-full w-[1px] block relative"></span>
+    <span class="h-full w-[1px] block relative"></span>
+    <span class="h-full w-[1px] block relative"></span>
+    <span
+      class="h-full w-[1px] block relative before:content-[''] before:absolute before:rounded-full before:w-7 before:h-7 before:bg-white before:top-24 before:shadow-2xl before:md:block before:hidden"></span>
+  </div>
+  <div class="main h-max w-full">
+    <div class="content w-full mx-auto h-max md:h-screen relative top-0 bg-bgBlue p-7">
+      <div class="mx-auto max-w-[1110px] w-full">
+        <nav class="w-full mx-auto">
+          <div class="w-full flex items-center mx-auto justify-between">
+            <button class="lg:hidden text-white toggleBtn">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="34" height="34"
+                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="4" y1="6" x2="20" y2="6"></line>
+                <line x1="4" y1="12" x2="20" y2="12"></line>
+                <line x1="4" y1="18" x2="20" y2="18"></line>
+              </svg>
+            </button>
+            <div class="navbar text-gray-300 lg:flex gap-7 text-md hidden z-10">
+              <a href="#home" class="">Home</a>
+              <a href="#about" class="">About</a>
+              <a href="#testimonials" class="">Testimonials</a>
+              <a href="#contact" class="shadow-[0_0_0_15px_borderC]">Contact</a>
+            </div>
+            <a href="/"
+              class="absolute left-2/4 -translate-x-2/4 tracking-wide text-center text-white font-bold text-3xl">smartHome</a>
+            <div class="flex items-center flex-col sm:flex-row gap-x-4">
+              <a href="/login" class="text-white tracking-wider">Login</a>
+              <button class="SignUp lg:px-7 px-4 py-2 lg:py-3 bg-white rounded-md shadow-2xl z-10">
+                Sign Up
+              </button>
+            </div>
+          </div>
+
+          <div id="mobile-menu"
+            class="hidden bg-[#000F38f3] px-4 w-full absolute left-1/2 -translate-x-1/2 top-24 z-10">
+            <div class="navbar text-gray-300 flex flex-col gap-3 text-md my-7">
+              <a href="#home" class="bg-gradient-to-r hover:from-blue-900 rounded-md p-2 duration-300">Home</a>
+              <a href="#about" class="bg-gradient-to-r hover:from-blue-900 rounded-md p-2 duration-300">About</a>
+              <a href="#testimonials"
+                class="bg-gradient-to-r hover:from-blue-900 rounded-md p-2 duration-300">Testimonials</a>
+              <a href="#contact" class="bg-gradient-to-r hover:from-blue-900 rounded-md p-2 duration-300">Contact</a>
+            </div>
+          </div>
+        </nav>
+        <div class="titles text-center max-w-[650px] mx-auto text-white my-14">
+          <h1 class="tracking-wide text-5xl md:text-7xl font-black">
+            Smart Home Application
+          </h1>
+          <p class="tracking-wide font-light mt-7">
+            Wisdom new and valley answer. Contentend it so is discourse
+            recommend. Man its upon him call mile. An pasture he himself
+            believe ferrars besides cottage.
+          </p>
+        </div>
+        <div
+          class="socials flex md:flex-col justify-center bottom-0 md:absolute md:bottom-10 md:left-10 text-white gap-7 text-xl">
+          <!-- Facebook -->
+          <a href="#">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <!-- Instagram -->
+          <a href="#">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <!-- Twitter -->
+          <a href="#">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+          <!-- Linkedin -->
+          <a href="#">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+        </div>
+        <div class="text-center mx-auto md:block hidden">
+          <div class="flex items-center justify-center mx-auto phones">
+            <img src="assets/phone.png" class="scale-[.87] lg:block hidden drop-shadow-2xl z-10" />
+            <img src="assets/phone.png" class="drop-shadow-2xl z-10" />
+            <img src="assets/phone.png" class="scale-[.87] lg:block hidden drop-shadow-2xl z-10" />
+          </div>
+          <div class="flex items-center gap-7 justify-center mx-auto mt-32">
+            <img src="assets/appStore.png" class="w-48" />
+            <img src="assets/playStore.png" class="w-52" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section id="about" class="w-full py-[50px] md:pt-[750px]">
+    <div class="w-full bg-white">
+      <h2
+        class="title-1 font-black text-center text-5xl md:text-7xl text-darkGray z-10 relative after:content-[''] after:absolute after:rounded-full after:w-[130px] after:h-[130px] after:top-full after:left-0 after:-translate-x-1/2 after:translate-y-1/3">
+        About Us
+      </h2>
+      <div class="content max-w-[1000px] w-full mx-auto">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <div class="flex items-center justify-between lg:flex-row flex-col gap-14 p-4">
+          <div class="phn relative z-10">
+            <img src="assets/phone.png" class="shadow-2xl" />
+          </div>
+          <div class="lg:max-w-[400px] lg:text-left text-center">
+            <h3 class="text-darkBlue text-4xl font-extrabold">
+              Smart Home's Smart Services
+            </h3>
+            <br />
+            <p class="text-xl text-gray-500">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
+              ipsa debitis error accusamus quibusdam eius tempora dolore.
+              Perferendis sunt delectus laboriosam repellat blanditiis beatae,
+              perspiciatis est, repudiandae totam ratione quis?
+            </p>
+            <br />
+            <button
+              class="text-darkBlue border border-darkBlue text-xl px-7 py-3 rounded-lg hover:text-white hover:bg-darkBlue duration-300">
+              Learn More
+            </button>
+          </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <div class="flex items-center justify-between lg:flex-row flex-col-reverse gap-14 p-4">
+          <div class="lg:max-w-[400px] lg:text-left text-center">
+            <h3 class="text-darkBlue text-4xl font-extrabold">
+              What app can do to your Appliences?
+            </h3>
+            <br />
+            <p class="text-xl text-gray-500">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
+              ipsa debitis error accusamus quibusdam eius tempora dolore.
+              Perferendis sunt delectus laboriosam repellat blanditiis beatae,
+              perspiciatis est, repudiandae totam ratione quis?
+            </p>
+            <br />
+            <button
+              class="text-darkBlue border border-darkBlue text-xl px-7 py-3 rounded-lg hover:text-white hover:bg-darkBlue duration-300">
+              Learn More
+            </button>
+          </div>
+          <div class="phn relative z-10">
+            <img src="assets/phone.png" class="shadow-2xl" />
+          </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <div class="flex items-center justify-between lg:flex-row flex-col gap-14 p-4">
+          <div class="phn relative z-10">
+            <img src="assets/phone.png" class="shadow-2xl" />
+          </div>
+          <div class="lg:max-w-[400px] lg:text-left text-center">
+            <h3 class="text-darkBlue text-4xl font-extrabold">
+              Control Electric Appliences
+            </h3>
+            <br />
+            <p class="text-xl text-gray-500">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
+              ipsa debitis error accusamus quibusdam eius tempora dolore.
+              Perferendis sunt delectus laboriosam repellat blanditiis beatae,
+              perspiciatis est, repudiandae totam ratione quis?
+            </p>
+            <br />
+            <button
+              class="text-darkBlue border border-darkBlue text-xl px-7 py-3 rounded-lg hover:text-white hover:bg-darkBlue duration-300">
+              Learn More
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-full text-center mx-auto my-24">
+      <div class="content">
+        <div class="titles max-w-[800px] mx-auto my-24 px-4">
+          <h2 class="title font-black text-center text-gray-700 text-5xl md:text-7xl">
+            Our Clients
+          </h2>
+          <br />
+          <p class="text-center text-xl text-gray-600 font-medium">
+            Wisdom new and valley answer. Contentend it so is discourse
+            recommend. Man its upon him call mile. An pasture he himself
+            believe ferrars cottage.
+          </p>
+        </div>
+        <div class="clients flex flex-wrap justify-center gap-7 mx-auto max-w-[1110px] px-7">
+          <img src="assets/clients__logo_1.png" class="drop-shadow-xl px-12 rounded-xl bg-white py-7 h-32 w-60" />
+          <img src="assets/clients__logo_2.png" class="drop-shadow-xl px-12 rounded-xl bg-white py-7 h-32 w-60" />
+          <img src="assets/clients__logo_3.png" class="drop-shadow-xl px-12 rounded-xl bg-white py-7 h-32 w-60" />
+          <img src="assets/clients__logo_4.png" class="drop-shadow-xl px-12 rounded-xl bg-white py-7 h-32 w-60" />
+          <img src="assets/clients__logo_5.png" class="drop-shadow-xl px-12 rounded-xl bg-white py-7 h-32 w-60" />
+          <img src="assets/clients__logo_4.png" class="drop-shadow-xl px-12 rounded-xl bg-white py-7 h-32 w-60" />
+          <img src="assets/clients__logo_5.png" class="drop-shadow-xl px-12 rounded-xl bg-white py-7 h-32 w-60" />
+          <img src="assets/clients__logo_6.svg" class="drop-shadow-xl px-12 rounded-xl bg-white py-7 h-32 w-60" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <section id="testimonials" class="mb-[100px]">
+    <div class="content max-w-[90%] w-full mx-auto">
+      <div class="titles max-w-[800px] text-center my-24 lg:px-4 mx-auto">
+        <h2 class="title font-black text-center text-gray-700 text-5xl md:text-7xl">
+          Testimonials
+        </h2>
+        <br />
+        <p class="text-center text-xl text-gray-600 font-medium">
+          Wisdom new and valley answer. Contentend it so is discourse
+          recommend. Man its upon him call mile. An pasture he himself believe
+          ferrars cottage.
+        </p>
+      </div>
+      <div class="testimonials lg:place-items-center lg:grid lg:grid-cols-2 flex flex-wrap justify-center gap-7 w-full">
+        <div class="testimonial p-7 lg:p-10 drop-shadow-xl rounded-xl bg-gray-100 hover:bg-white duration-300">
+          <p class="text-gray-600 font-bold tracking-wide">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Perspiciatis ad, delectus fugiat molestias ea illum qui
+            repudiandae rem quas rerum omnis repellat fugit doloribus!
+            Incidunt, adipisci? Sapiente pariatur voluptas ipsam!
+          </p>
+          <br />
+          <br />
+          <div class="flex items-center gap-4">
+            <img src="assets/testimonial__2.jpg" class="rounded-full w-14 h-14 object-cover" />
+            <span>
+              <p class="font-bold">Champ</p>
+              <span class="text-sm text-gray-400">Product designer - Besnik</span>
+            </span>
+          </div>
+        </div>
+        <div class="testimonial p-7 lg:p-10 drop-shadow-xl rounded-xl bg-gray-100 hover:bg-white duration-300">
+          <p class="text-gray-600 font-bold tracking-wide">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Perspiciatis ad, delectus fugiat molestias ea illum qui
+            repudiandae rem quas rerum omnis repellat fugit doloribus!
+            Incidunt, adipisci? Sapiente pariatur voluptas ipsam!
+          </p>
+          <br />
+          <br />
+          <div class="flex items-center gap-4">
+            <img src="assets/testimonial__1.jpg" class="rounded-full w-14 h-14 object-cover" />
+            <span>
+              <p class="font-bold">Scopic Software</p>
+              <span class="text-sm text-gray-400">Custom IT Solutions Firm</span>
+            </span>
+          </div>
+        </div>
+        <div class="testimonial p-7 lg:p-10 drop-shadow-xl rounded-xl bg-gray-100 hover:bg-white duration-300">
+          <p class="text-gray-600 font-bold tracking-wide">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Perspiciatis ad, delectus fugiat molestias ea illum qui
+            repudiandae rem quas rerum omnis repellat fugit doloribus!
+            Incidunt, adipisci? Sapiente pariatur voluptas ipsam!
+          </p>
+          <br />
+          <br />
+          <div class="flex items-center gap-4">
+            <img src="assets/testimonial__1.jpg" class="rounded-full w-14 h-14 object-cover" />
+            <span>
+              <p class="font-bold">Russell Lee</p>
+              <span class="text-sm text-gray-400">Writer</span>
+            </span>
+          </div>
+        </div>
+        <div class="testimonial p-7 lg:p-10 drop-shadow-xl rounded-xl bg-gray-100 hover:bg-white duration-300">
+          <p class="text-gray-600 font-bold tracking-wide">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Perspiciatis ad, delectus fugiat molestias ea illum qui
+            repudiandae rem quas rerum omnis repellat fugit doloribus!
+            Incidunt, adipisci? Sapiente pariatur voluptas ipsam!
+          </p>
+          <br />
+          <br />
+          <div class="flex items-center gap-4">
+            <img src="assets/testimonial__3.jpg" class="rounded-full w-14 h-14 object-cover" />
+            <span>
+              <p class="font-bold">Solace Engineers Inc.</p>
+              <span class="text-sm text-gray-400">Engineering Firm</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="w-full py-[100px] sect-faq relative">
+      <div class="content">
+        <div class="">
+          <div class="text-5xl mx-auto text-center">
+            <button class="">
+              <i class="fa-solid fa-arrow-left-long"></i>
+            </button>
+            <button class="">
+              <i class="fa-solid fa-arrow-right-long"></i>
+            </button>
+          </div>
+          <h2 class="title font-black text-center text-7xl text-darkGray my-24">
+            FAQ's
+          </h2>
+          <div id="accordion" class="max-w-[700px] mx-auto grid place-content-center px-4">
+            <h2 class="h-16 text-xl rounded-xl border-none drop-shadow">
+              Chamber reached do he nothing be?
+            </h2>
+            <div class="text-lg">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+              asperiores atque, neque alias ut sed doloremque harum officia
+              nesciunt eius ducimus dolorem nam laboriosam praesentium ad,
+              molestias sint eaque ex!
+            </div>
+            <br />
+            <br />
+            <h2 class="h-16 text-xl rounded-xl border-none drop-shadow">
+              Stuff sight equal of my woody?
+            </h2>
+            <div class="text-lg">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+              asperiores atque, neque alias ut sed doloremque harum officia
+              nesciunt eius ducimus dolorem nam laboriosam praesentium ad,
+              molestias sint eaque ex!
+            </div>
+            <br />
+            <br />
+            <h2 class="h-16 text-xl rounded-xl border-none drop-shadow">
+              At by pleasure of children be?
+            </h2>
+            <div class="text-lg">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+              asperiores atque, neque alias ut sed doloremque harum officia
+              nesciunt eius ducimus dolorem nam laboriosam praesentium ad,
+              molestias sint eaque ex!
+            </div>
+            <br />
+            <br />
+            <h2 class="h-16 text-xl rounded-xl border-none drop-shadow">
+              Amounted repeated as believed in confined?
+            </h2>
+            <div class="text-lg">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+              asperiores atque, neque alias ut sed doloremque harum officia
+              nesciunt eius ducimus dolorem nam laboriosam praesentium ad,
+              molestias sint eaque ex!
+            </div>
+            <br />
+            <br />
+            <h2 class="h-16 text-xl rounded-xl border-none drop-shadow">
+              In am do giving to affroad parish settle easily garret?
+            </h2>
+            <div class="text-lg">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+              asperiores atque, neque alias ut sed doloremque harum officia
+              nesciunt eius ducimus dolorem nam laboriosam praesentium ad,
+              molestias sint eaque ex!
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <section class="flex items-center max-w-[1110px] mx-auto justify-between w-full md:flex-row flex-col-reverse">
+    <div class="md:max-w-[600px] w-full px-7">
+      <h3 class="font-black text-6xl md:text-8xl">Download App</h3>
+      <br />
+      <p class="text-xl text-gray-600">
+        Wisdom new and valley answer. Contentend it so is discourse recommend.
+        Man its upon him call mile. An pasture he himself believe ferrars
+        cottage.
+      </p>
+      <br />
+      <br />
+      <div class="flex items-center gap-7 sm:flex-row flex-col">
+        <img src="assets/appStore.png" class="w-48" />
+        <img src="assets/playStore.png" class="w-52" />
+      </div>
+    </div>
+    <br />
+    <div class="shadow-2xl">
+      <img src="assets/phone.png" class="shadow-2xl w-60 md:w-auto" />
+    </div>
+  </section>
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <div
+    class="GetStarted mx-auto max-w-[1110px] bg-bgBlue rounded-lg relative my-[100px] overflow-hidden mx-4 md:relative md:left-1/2 md:-translate-x-1/2">
+    <div class="content flex justify-between w-full py-6 px-8 md:py-16 md:px-24 mx-auto md:flex-row flex-col">
+      <div class="text-white max-w-[500px] z-50">
+        <h3 class="text-4xl font-bold tracking-wide">
+          Subscribe to get updated
+        </h3>
+        <br />
+        <p class="tracking-wider">
+          At vero eos et accusamus es iusto odio dignissimos dicumus qui
+          blanditiis praesentium delentiti atque.
+        </p>
+      </div>
+      <br />
+      <button
+        class="border border-white hover:bg-white hover:text-bgBlue h-12 px-16 py-7 flex items-center justify-center rounded-lg text-white z-50">
+        Get start
+      </button>
+    </div>
+  </div>
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <footer>
+    <div class="content max-w-[1110px] w-full flex justify-between mx-auto py-12 lg:px-10 px-4 flex-wrap gap-20">
+      <div class="max-w-[300px] mx-auto">
+        <h4 class="font-black text-3xl md:text-left text-center mx-auto">
+          <a href="/">smartHome</a>
+        </h4>
+        <br />
+        <p>
+          Automate your entire healthcare hiring, onboarding and compliance
+          with a true technology platform.
+        </p>
+        <br />
+        <br />
+        <form class="flex lg:items-center gap-4 lg:flex-row flex-col">
+          <input type="email" name="email" placeholder="Email Address" required
+            class="border border-borderC outline-none px-7 py-3 rounded-lg" />
+          <button type="submit" class="border border-darkBlue rounded-lg px-7 py-3 text-darkBlue">
+            Register
+          </button>
+        </form>
+      </div>
+      <div class="grid gap-y-4 md:text-left text-center mx-auto">
+        <h4 class="font-black text-3xl">CATEGORIES</h4>
+        <br />
+        <a href="#">Product Management</a>
+        <a href="#">Design / Creatives</a>
+        <a href="#">EEducation & Training</a>
+        <a href="#">UI/UX Designers</a>
+        <a href="#">Development</a>
+        <a href="#">Customer Support</a>
+      </div>
+      <div class="grid gap-y-4 md:text-left text-center mx-auto">
+        <h4 class="font-black text-3xl">About</h4>
+        <br />
+        <a href="#">About Us </a>
+        <a href="#">Partnerships</a>
+        <a href="#">Finance Experts</a>
+        <a href="#">Product Management</a>
+        <a href="#">Product Manager</a>
+        <a href="#">The Team</a>
+      </div>
+      <div class="grid gap-y-4 md:text-left text-center mx-auto">
+        <h4 class="font-black text-3xl">Follow Us</h4>
+        <br />
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">Instagram</a>
+        <a href="#">Linkedin</a>
+      </div>
+    </div>
+    <div class="flex items-center justify-center w-full bg-darkBlue">
+      <span class="text-white text-center py-4">Copyright © 2017 all rights reserved smartHome</span>
+    </div>
+  </footer>
+  <!-- JS links -->
+  <script src="js/app.js"></script>
+</body>
+
+</html>
